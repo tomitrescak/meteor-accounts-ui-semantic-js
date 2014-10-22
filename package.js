@@ -2,7 +2,7 @@ Package.describe({
   name: 'tomi:accounts-ui-semantic-js',
   summary: 'Accounts-ui template with semantic-js',
   version: '1.0.0',
-  git: ''
+  git: 'git://github.com/tomitrescak/meteor-accounts-ui-semantic-js.git'
 });
 
 Package.onUse(function(api) {
