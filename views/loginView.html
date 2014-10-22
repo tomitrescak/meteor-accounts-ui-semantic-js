@@ -1,0 +1,25 @@
+<template name="loginView">
+    {{#if alerts}}
+        <div class="ui red message">{{ alerts }}</div>
+    {{/if}}
+    {{#if infos}}
+        <div class="ui green message">{{ infos }}</div>
+    {{/if}}
+    {{#unless resetPassword}}
+        {{#unless currentUser}}
+            {{#unless showForgotPassword}}
+                {{#unless showRegisterForm}}
+                    {{> signIn}}
+                {{else}}
+                    {{> signUp}}
+                {{/unless}}
+            {{else}}
+                {{> forgotPassword}}
+            {{/unless}}
+        {{else}}
+            {{> signOut}}
+        {{/unless}}
+    {{else}}
+        {{> resetPasswordView}}
+    {{/unless}}
+</template>

@@ -1,0 +1,42 @@
+<template name="signIn">
+    <form class="ui form segment" id="signInForm">
+        <div class="field">
+            <label>{{t9n 'email'}}</label>
+            <div class="ui left labeled icon input">
+                <input type="text" placeholder="{{t9n 'emailAddress'}}" id="email">
+                <i class="mail icon"></i>
+                <div class="ui corner label">
+                    <i class="icon asterisk"></i>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label>{{t9n 'password'}}</label>
+            <div class="ui left labeled icon input">
+                <input type="password" placeholder="{{t9n 'password'}}" id="password">
+                <i class="lock icon"></i>
+                <div class="ui corner label">
+                    <i class="icon asterisk"></i>
+                </div>
+            </div>
+        </div>
+        <div class="ui error message">
+            <div class="header">We noticed some issues</div>
+        </div>
+        <p>
+            <a href="#" id="forgotPasswordButton">{{t9n 'forgotPassword'}}</a>
+        </p>
+        <div class="center aligned column">
+            <div class="ui fluid submit button">{{t9n 'signIn'}}</div>
+        </div>
+        <div class="ui horizontal divider">
+            Or
+        </div>
+        <div class="center aligned column">
+            <div class="green ui labeled icon button" id="registerButton">
+                <i class="signup icon"></i>
+                {{t9n 'signUp' }}
+            </div>
+        </div>
+    </form>
+</template>
