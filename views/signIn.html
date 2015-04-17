@@ -1,23 +1,19 @@
 <template name="signIn">
-    <form class="ui form segment" id="signInForm">
+    <form class="ui form" id="signInForm">
         <div class="field">
             <label>{{t9n 'email'}}</label>
-            <div class="ui left labeled icon input">
+
+            <div class="ui icon input">
                 <input type="text" placeholder="{{t9n 'emailAddress'}}" id="email">
                 <i class="mail icon"></i>
-                <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                </div>
             </div>
         </div>
         <div class="field">
             <label>{{t9n 'password'}}</label>
-            <div class="ui left labeled icon input">
+
+            <div class="ui icon input">
                 <input type="password" placeholder="{{t9n 'password'}}" id="password">
                 <i class="lock icon"></i>
-                <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                </div>
             </div>
         </div>
         <div class="ui error message">
@@ -25,9 +21,12 @@
         </div>
         <p>
             <a href="#" id="forgotPasswordButton">{{t9n 'forgotPassword'}}</a>
+            <div style="float: right"><a href="#" id="resendVerification">{{t9n 'resendVerification'}}</a></div>
         </p>
+
+
         <div class="center aligned column">
-            <div class="ui fluid submit button">{{t9n 'signIn'}}</div>
+            <div class="ui submit primary button">{{t9n 'signIn'}}</div>
         </div>
         <div class="ui horizontal divider">
             Or
@@ -38,5 +37,6 @@
                 {{t9n 'signUp' }}
             </div>
         </div>
+
     </form>
 </template>

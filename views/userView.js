@@ -1,5 +1,5 @@
 Template['userView'].rendered = function() {
-  $('#userMenu').dropdown();
+  $('#userMenu').dropdown({on: 'hover'});
 }
 
 Template['userView'].events({
@@ -8,7 +8,6 @@ Template['userView'].events({
     Router.go('/');
   },
   'click #profile': function() {
-    alert('move');
     Router.go('profile');
   }
 });

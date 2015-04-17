@@ -21,10 +21,15 @@ Template['resetPasswordView'].events({
         }
         else {
           showInfo(T9n.get('info.passwordChanged'));
-          Session.set('login-view', '');
+          Accounts._resetPasswordToken = null;
+          Session.set('login-view', 'signIn');
         }
       });
     }
+    return false;
+  },
+  'click #signInButton': function() {
+    Session.set('login-view', 'signIn');
     return false;
   }
 });

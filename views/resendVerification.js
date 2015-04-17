@@ -1,5 +1,5 @@
-Template['forgotPassword'].events({
-  'submit #forgotPasswordForm': function(e) {
+Template['resendVerificationView'].events({
+  'submit #resendVerificationForm': function(e) {
     e.preventDefault();
 
     clearMessages();
@@ -10,16 +10,18 @@ Template['forgotPassword'].events({
     if (isNotEmpty(email) && isEmail(email)) {
       $(forgotPasswordForm).addClass('loading');
 
-      Accounts.forgotPassword({email: email}, function(err) {
+      Meteor.call('sendVerificationEmail', email, function(err) {
         $(forgotPasswordForm).removeClass('loading');
         if (err) {
           if (err.message === 'User not found [403]') {
             showError(T9n.get('emailNotFound'));
+          } if (err.message === 'User already verified [403]') {
+            showError(T9n.get('userAlreadyVerified'));
           } else {
             showError(T9n.get('Unknown error'));
           }
         } else {
-          showInfo(T9n.get('passwordResetEmailSent'));
+          showInfo(T9n.get('verificationEmailSent'));
         }
       });
     }
@@ -31,7 +33,7 @@ Template['forgotPassword'].events({
   }
 });
 
-Template['forgotPassword'].rendered = function() {
+Template['resendVerificationView'].rendered = function() {
   $('.ui.form')
     .form({
       username: {

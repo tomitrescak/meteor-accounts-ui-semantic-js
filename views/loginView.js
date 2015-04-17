@@ -29,6 +29,9 @@ Template['loginView'].helpers({
   infos: function() {
     return Session.get('infos');
   },
+  resendVerification: function() {
+    return Session.get('login-view') === 'resendVerification';
+  },
   resetPassword: function() {
     return Session.get('login-view') === 'resetPassword';
   },

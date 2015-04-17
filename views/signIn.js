@@ -14,11 +14,14 @@ Template['signIn'].events({
         if (err) {
           Session.set('alerts', T9n.get('invalidCredentials'));
         } else {
-          Router.go('dashboard');
+          // Router.go('dashboard');
         }
       });
     }
     return false;
+  },
+  'click #resendVerification': function() {
+    Session.set('login-view', 'resendVerification');
   },
   'click #registerButton': function() {
     Session.set('login-view', 'register');
@@ -30,6 +33,8 @@ Template['signIn'].events({
 });
 
 Template['signIn'].rendered = function() {
+  clearMessages();
+
   $('.ui.form')
     .form({
       username: {

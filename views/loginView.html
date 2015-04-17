@@ -5,21 +5,25 @@
     {{#if infos}}
         <div class="ui green message">{{ infos }}</div>
     {{/if}}
-    {{#unless resetPassword}}
-        {{#unless currentUser}}
-            {{#unless showForgotPassword}}
-                {{#unless showRegisterForm}}
-                    {{> signIn}}
+    {{#unless resendVerification}}
+        {{#unless resetPassword}}
+            {{#unless currentUser}}
+                {{#unless showForgotPassword}}
+                    {{#unless showRegisterForm}}
+                        {{> signIn}}
+                    {{else}}
+                        {{> signUp}}
+                    {{/unless}}
                 {{else}}
-                    {{> signUp}}
+                    {{> forgotPassword}}
                 {{/unless}}
             {{else}}
-                {{> forgotPassword}}
+                {{> signOut}}
             {{/unless}}
         {{else}}
-            {{> signOut}}
+            {{> resetPasswordView}}
         {{/unless}}
     {{else}}
-        {{> resetPasswordView}}
+        {{> resendVerificationView}}
     {{/unless}}
 </template>

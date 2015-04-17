@@ -1,47 +1,40 @@
 <template name="signUp">
-    <form class="ui form segment" id="signUpForm">
+    <form class="ui form" id="signUpForm">
+        <div class="ui error message"></div>
         <div class="field">
             <label>{{t9n 'fullName'}}</label>
-            <div class="ui left labeled icon input">
+            <div class="ui icon input">
                 <input type="text" placeholder="{{t9n 'nameAndSurename'}}" id="name">
                 <i class="user icon"></i>
-                <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                </div>
             </div>
         </div>
         <div class="field">
             <label>{{t9n 'email'}}</label>
-            <div class="ui left labeled icon input">
+            <div class="ui icon input">
                 <input type="text" placeholder="{{t9n 'emailAddress'}}" id="email">
                 <i class="mail icon"></i>
-                <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                </div>
             </div>
         </div>
         <div class="field">
             <label>{{t9n 'password'}}</label>
-            <div class="ui left labeled icon input">
+            <div class="ui icon input">
                 <input type="password" placeholder="{{t9n 'password'}}" id="password">
                 <i class="lock icon"></i>
-                <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                </div>
             </div>
         </div>
         <div class="field">
             <label>{{t9n 'passwordAgain'}}</label>
-            <div class="ui left labeled icon input">
+            <div class="ui icon input">
                 <input type="password" placeholder="{{t9n 'passwordAgain'}}" id="password-again">
                 <i class="lock icon"></i>
-                <div class="ui corner label">
-                    <i class="icon asterisk"></i>
-                </div>
             </div>
         </div>
+        {{#if extraFieldsTemplate}}
+            {{> Template.dynamic template=extraFieldsTemplate}}
+        {{/if}}
+
         <div class="center aligned column">
-            <div class="ui fluid submit button">{{t9n 'signUp'}}</div>
+            <div class="ui fluid submit primary button">{{t9n 'signUp'}}</div>
         </div>
         <div class="ui horizontal divider">
             Or

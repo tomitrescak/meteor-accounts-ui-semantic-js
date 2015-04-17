@@ -6,3 +6,9 @@ Template.signOut.events({
     return false;
   }
 });
+
+Template.signOut.helpers({
+  signOutTemplate: function() {
+    return Accounts.signOutTemplate;
+  }
+});

@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('0.9.0');
+  api.versionsFrom('1.0');
 
   api.use([
     'accounts-base',
@@ -17,12 +17,14 @@ Package.onUse(function(api) {
 
   api.imply([
     'softwarerero:accounts-t9n@1.0.0',
-    'iron:router@0.9.4',
+    'iron:router@1.0.5',
   ], ['client', 'server']);
 
   api.addFiles(
     [
       'lib/helpers.js',
+      'views/resendVerification.html',
+      'views/resendVerification.js',
       'views/forgotPassword.html',
       'views/forgotPassword.js',
       'views/resetPassword.html',
