@@ -8,8 +8,10 @@ Template['signIn'].events({
 
     if (isNotEmpty(email) && isEmail(email) && isNotEmpty(password) && isValidPassword(password)) {
       $('#signInForm').addClass('loading');
+      //$('#signInForm').dimmer('show');
 
       Meteor.loginWithPassword(email, password, function(err) {
+        //$('#signInForm').dimmer('hide');
         $('#signInForm').removeClass('loading');
         if (err) {
           Session.set('alerts', T9n.get('invalidCredentials'));

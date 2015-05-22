@@ -1,0 +1,1 @@
+Meteor accounts package for Semantic UI.
